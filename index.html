@@ -1,6 +1,258 @@
 <!DOCTYPE html>
-<html>
-  <body>
-    <h1>hi</h1>
-  </body>
+<!--
+INCLUDE:
+Dropdown to select platform
+Footer with social media
+SEO header
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wavlo - Control your listen</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" href="Wavlo.png" /> 
+</head>
+<body>
+    <header class="nav">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="Wavlo.png" alt="Wavlo logo" />
+                Wavlo
+            </div>
+            <nav class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#about">About</a>
+                <a href="javascript:onDownload();" class="nav-cta">Download</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section class="hero">
+            <div class="hero-inner">
+                <div class="hero-text">
+                    <h1>Stream smarter. Share cleaner.</h1>
+                    <p class="hero-subtitle">
+                        Wavlo helps you clean up your playlists in seconds so you can listen,
+                        share, and play music anywhere—without worrying about explicit lyrics.
+                    </p>
+                    <div class="hero-buttons">
+                        <!-- Replace # with your real link later -->
+                        <a href="javascript:onDownload();" class="btn primary">Download Wavlo</a>
+                        <a href="#webapp" class="btn secondary">Open Web App</a>
+                    </div>
+                    <p class="hero-note">
+                        Free to use. No sign-up required to get started.
+                    </p>
+                </div>
+
+                <div class="hero-card">
+                    <div class="hero-card-header">
+                        <span class="pill">Preview</span>
+                        <span class="hero-card-title">Clean Playlist View</span>
+                    </div>
+                    <ul class="hero-card-list">
+                        <li>
+                            <span class="dot"></span>
+                            <div>
+                                <p class="card-title">Instant explicit filter</p>
+                                <p class="card-sub">Swap in clean versions automatically.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="dot"></span>
+                            <div>
+                                <p class="card-title">Side-by-side comparison</p>
+                                <p class="card-sub">See which songs were changed or muted.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="dot"></span>
+                            <div>
+                                <p class="card-title">One-click export</p>
+                                <p class="card-sub">Save cleaned playlists back to your library.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- FEATURES SECTION -->
+        <section id="features" class="section">
+            <div class="section-inner">
+                <h2>Why Wavlo?</h2>
+                <p class="section-subtitle">
+                    Built for people who love music—but don’t always love the lyrics.
+                </p>
+
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h3>Automatic cleaning</h3>
+                        <p>
+                            Wavlo scans your playlists and flags explicit tracks, then helps you
+                            swap them for clean versions wherever possible.
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Custom filters</h3>
+                        <p>
+                            Choose how strict you want to be—mute, skip, or swap songs based on
+                            what’s right for your vibe or audience.
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Share-ready playlists</h3>
+                        <p>
+                            Create school, work, family, or stream-safe playlists you can share
+                            without second-guessing every track.
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Lightweight & simple</h3>
+                        <p>
+                            No clutter, no confusing menus—just a clean interface focused on
+                            helping you fix your playlists fast.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section id="about" class="section section-alt">
+            <div class="section-inner about-grid">
+                <div>
+                    <h2>About Us</h2>
+                    <p class="section-subtitle">
+                        We’re Gio Bean and Jacob Smith, co-founders of Wavlo.
+                    </p>
+                    <p>
+                        Wavlo started as a simple idea between two friends who loved music but
+                        were constantly skipping songs when they were around family, at school,
+                        or in more professional settings. We got tired of curating “clean”
+                        playlists by hand—so we decided to build something better.
+                    </p>
+                    <p>
+                        Neither of us came from a huge tech background. We learned as we went,
+                        line by line and late night after late night, slowly turning a rough idea
+                        into a real app. Wavlo is the product of that process: a small tool that
+                        solves a real problem we faced every day.
+                    </p>
+                    <p>
+                        Our goal is simple: make it easier for anyone to enjoy and share the music
+                        they love, without worrying about the moments when lyrics matter.
+                    </p>
+                </div>
+
+                <div class="about-card">
+                    <h3>Our values</h3>
+                    <ul>
+                        <li><span>👂</span>Listen to users first.</li>
+                        <li><span>🎧</span>Respect how and where people listen.</li>
+                        <li><span>🚀</span>Ship small, meaningful improvements often.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <p>© <span id="year"></span> Wavlo.</p>
+        </div>
+    </footer>
+
+    <!-- Tiny inline script just to keep the year updated (not required, but nice). -->
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+
+        function onDownload() {
+  // Replace with your real URLs
+  const ANDROID_URL = "https://play.google.com/store/apps/details?id=YOUR_APP_ID";
+  const IOS_URL     = "https://apps.apple.com/us/app/YOUR_APP_ID";
+  const DESKTOP_URL = "https://yourwebsite.com/download/WavloInstaller.exe";
+
+  const ua = navigator.userAgent || "";
+  const platform = navigator.platform || "";
+  const maxTouchPoints = navigator.maxTouchPoints || 0;
+
+  // Robust iOS detection:
+  // - classic tokens (iPhone/iPad/iPod)
+  // - iPadOS 13+ (reports MacIntel but has touch support)
+  // - also catch iOS WebViews / Chrome on iOS (they often contain "CriOS" / "FxiOS")
+  const isIosUA = /iPad|iPhone|iPod/.test(ua) || /CriOS|FxiOS|OPiOS|Twitter/.test(ua);
+  const isIpadOS = platform === "MacIntel" && maxTouchPoints > 1;
+  const isIOS = isIosUA || isIpadOS;
+
+  // Android detection (straightforward)
+  const isAndroid = /Android/i.test(ua);
+
+  // Desktop: not mobile and not tablet-ish (touch desktops are rare for download flow)
+  const isDesktop = !isIOS && !isAndroid;
+
+  // Helper: try redirect, but don't bounce if we're running inside a store webview
+  function safeRedirect(url) {
+    try {
+      window.location.replace(url);
+    } catch (e) {
+      window.location.href = url;
+    }
+  }
+
+  // If you want immediate redirect:
+  if (isIOS) {
+    safeRedirect(IOS_URL);
+    return;
+  }
+  if (isAndroid) {
+    safeRedirect(ANDROID_URL);
+    return;
+  }
+  // Desktop fallback
+  if (isDesktop) {
+    safeRedirect(DESKTOP_URL);
+    return;
+  }
+
+  // If detection failed for some weird UA, show a small chooser overlay (non-blocking)
+  // This prevents surprising redirects for rare user agents.
+  const chooserHtml = `
+    <style>
+      #wavlo-device-chooser {
+        position: fixed;
+        right: 16px;
+        bottom: 16px;
+        z-index: 9999;
+        background: white;
+        border: 1px solid rgba(0,0,0,0.08);
+        box-shadow: 0 6px 24px rgba(0,0,0,0.12);
+        padding: 12px;
+        border-radius: 10px;
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+        width: 260px;
+      }
+      #wavlo-device-chooser h4 { margin: 0 0 8px; font-size: 14px; }
+      #wavlo-device-chooser .d-btn { display:inline-block; margin:4px 4px 0 0; padding:8px 10px; font-size:13px; border-radius:6px; text-decoration:none; border:1px solid rgba(0,0,0,0.06); }
+      #wavlo-device-chooser .d-close { float:right; margin-top:-4px; cursor:pointer; color:#666; font-weight:600; }
+    </style>
+    <div id="wavlo-device-chooser" role="dialog" aria-label="Download Wavlo">
+      <div><span style="font-size:13px;color:#333">Choose your device</span><span class="d-close" title="Close">✕</span></div>
+      <div style="margin-top:8px">
+        <a class="d-btn" href="${IOS_URL}">iOS / Apple Store</a>
+        <a class="d-btn" href="${ANDROID_URL}">Android / Play Store</a>
+        <a class="d-btn" href="${DESKTOP_URL}">Desktop Download</a>
+      </div>
+    </div>
+  `;
+  document.body.insertAdjacentHTML('beforeend', chooserHtml);
+  document.querySelector('#wavlo-device-chooser .d-close').addEventListener('click', function() {
+    document.getElementById('wavlo-device-chooser').remove();
+  });
+    };
+
+    </script>
+</body>
 </html>
