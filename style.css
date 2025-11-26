@@ -37,6 +37,12 @@ body {
     min-height: 100vh;
 }
 
+button{
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+        "Inter", sans-serif;
+
+}
+
 /* Layout helpers */
 
 main {
@@ -262,9 +268,11 @@ p {
     }
 
     .hero-card {
-        order: -1;
+        order: 0; /* keep card after text */
     }
-}
+    .hero-content {
+        order: 0;
+    }}
 
 /* --------- BUTTONS --------- */
 
@@ -380,4 +388,131 @@ p {
     width: 28px;
     border-radius: 6px; /* looks modern; remove if you prefer square */
     display: block;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-toggle {
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: rgba(15, 23, 42, 0.92);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    margin-top: 0.5rem;
+    display: none;
+    min-width: 220px;
+    padding: 0.4rem;
+    box-shadow: var(--shadow-soft);
+    backdrop-filter: blur(18px);
+    z-index: 99;
+}
+
+.dropdown.open .dropdown-menu {
+    display: block;
+    animation: fadeIn 0.15s ease-out;
+}
+
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.55rem 0.7rem;
+    text-decoration: none;
+    color: var(--text-main);
+    border-radius: var(--radius-lg);
+    font-size: 0.9rem;
+    transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.dropdown-item:hover {
+    background: rgba(168, 85, 247, 0.15);
+    color: var(--accent-strong);
+}
+
+.dropdown-item img {
+    height: 18px;
+    width: 18px;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-4px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.footer {
+  margin-top: 6rem;
+  padding: 3.5rem 1.5rem;
+  background: #0a0b10;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.footer-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.footer-section h4 {
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  color: var(--accent-strong);
+}
+
+.footer-section p,
+.footer-section a {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  transition: 0.25s;
+    color:white;
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+  opacity: 1;
+  color: var(--accent-strong);
+}
+
+.social-links a {
+    margin-right: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.25s;
+  opacity: 0.8;
+}
+
+.social-links a:hover {
+  opacity: 1;
+  color: var(--accent-strong);
+}
+
+.footer-downloads {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-downloads li {
+  margin: 0.35rem 0;
+}
+
+.footer-copy {
+  text-align: center;
+  margin-top: 3rem;
+  font-size: 0.85rem;
+  opacity: 0.55;
+}
+.social-links svg {
+  width: 24px;
+  height: 24px;
 }
